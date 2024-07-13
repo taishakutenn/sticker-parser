@@ -33,7 +33,9 @@ params = {
 }
 while count < max_page + 1:
     # Гет запрос к странице
-    request = requests.get(url, params=params)
+    session = requests.session()
+
+    request = session.get(url, params=params)
     responce = request.content
 
     # Варим суп
